@@ -52,7 +52,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Index
+Next
 {% endblock %}
 
 {% block headline %}
@@ -60,10 +60,8 @@ Index
 {% endblock %}
 
 {% block content %}
-<p>{{ message }}
-<p>Total: {{ data | sum }}</p>
+<p>{{ message }}</p>
 <pre>{{ data }}</pre>
-</p>
 {% endblock %}
 
 {% block footer %}
