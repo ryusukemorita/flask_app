@@ -6,14 +6,16 @@ app = Flask(__name__)
 def index():
     return render_template('index.html',
                             title = "index with Jinja",
-                            message = "What's your name?")
+                            message = [ck, rd, sel])
 
 @app.route('/', methods = ['POST'])
 def form():
-    field = request.form['field']
+    ck = request.form.get('check')
+    rd = request.form.get('radio')
+    sel = request.form.getlist('sel')
     return render_template('index.html',
                             title="index with Jinja",
-                            message = "Hi, %s" % field)
+                            message = [ck, rd, sel])
 
 if __name__ == '__main__':
     app.debug = True
